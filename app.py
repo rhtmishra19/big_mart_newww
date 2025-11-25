@@ -38,7 +38,11 @@ if st.button("Predict Sales"):
         "Outlet_Location_Type": outlet_location_type,
         "Outlet_Type": outlet_type
     }])
-
+    input_df['Item_Fat_Content'] = input_df['Item_Fat_Content'].astype('category')
+    input_df['Item_Type'] = input_df['Item_Type'].astype('category')
+    input_df['Outlet_Size'] = input_df['Outlet_Size'].astype('category')
+    input_df['Outlet_Location_Type'] = input_df['Outlet_Location_Type'].astype('category')
+    input_df['Outlet_Type'] = input_df['Outlet_Type'].astype('category')
     try:
         result = model.predict(input_df)[0]
         st.success(f"Predicted Sales: {round(result, 2)}")
