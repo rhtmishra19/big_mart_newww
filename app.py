@@ -15,7 +15,12 @@ outlet_est_year = st.number_input("Outlet Establishment Year", min_value=1985, m
 
 # Categorical inputs (must match training preprocessing)
 item_fat_content = st.selectbox("Item Fat Content", ["Low Fat", "Regular"])
-item_type = st.text_input("Item Type (e.g., Snack Foods)")
+item_type = st.selectbox(
+    'Item Type',
+    ['Dairy', 'Soft Drinks', 'Meat', 'Fruits and Vegetables', 'Household', 'Baking Goods',
+     'Snack Foods', 'Frozen Foods', 'Breakfast', 'Health and Hygiene', 'Hard Drinks',
+     'Canned', 'Breads', 'Starchy Foods', 'Others', 'Seafood']
+)
 outlet_size = st.selectbox("Outlet Size", ["Small", "Medium", "High"])
 outlet_location_type = st.selectbox("Outlet Location Type", ["Tier 1", "Tier 2", "Tier 3"])
 outlet_type = st.selectbox("Outlet Type", ["Supermarket Type1", "Supermarket Type2", "Supermarket Type3", "Grocery Store"])
